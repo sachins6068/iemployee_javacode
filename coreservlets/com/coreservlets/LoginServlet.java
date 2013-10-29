@@ -47,8 +47,10 @@ public class LoginServlet extends HttpServlet {
 		{
 			request.setAttribute("authenticationmsg", "");
 			if(usertype.equalsIgnoreCase("employee")){
-
+				System.out.println(creds.getUsername());
+				request.setAttribute("empid",creds.getUsername());
 				request.getRequestDispatcher("emphome.jsp").forward(request, response);
+				
 			}
 			else if(usertype.equalsIgnoreCase("admin"))
 			{
